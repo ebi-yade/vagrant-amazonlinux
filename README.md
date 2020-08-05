@@ -8,7 +8,6 @@ Create a VM Amazon Linux as a Base Box with VirtualBox
 make seeder
 curl -LO https://cdn.amazonlinux.com/os-images/2.0.20200722.0/virtualbox/amzn2-virtualbox-2.0.20200722.0-x86_64.xfs.gpt.vdi
 make vbox VM=vagrant-amznlinux2 VDI=amzn2-virtualbox-2.0.20200722.0-x86_64.xfs.gpt.vdi
-ssh -p 2222 ec2-user@localhost -i insecure.pem
 make vagrant-register VM=vagrant-amznlinux2
 ```
 
