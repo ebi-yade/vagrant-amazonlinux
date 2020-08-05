@@ -10,8 +10,8 @@ To get started, make sure you have [VirtualBox](https://www.virtualbox.org/) and
 make seeder
 curl -LO https://cdn.amazonlinux.com/os-images/2.0.20200722.0/virtualbox/amzn2-virtualbox-2.0.20200722.0-x86_64.xfs.gpt.vdi
 make vbox VM=vagrant-amznlinux2 VDI=amzn2-virtualbox-2.0.20200722.0-x86_64.xfs.gpt.vdi
-make vagrant-register VM=vagrant-amznlinux2
-make vagrant-init
+make cleanup
+make vagrant VM=vagrant-amznlinux2
 ```
 
 ## Reference
