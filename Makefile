@@ -15,11 +15,8 @@ cleanup:
 	sudo rm -f /0 && \
 	history -c && \
 	sudo shutdown -h now "
-vagrant:
-	cd vagrant/package && \
+vagrant-init:
 	vagrant package --base "$(VM)" --output amzn2.box && \
 	vagrant box add --name amzn2 amzn2.box && \
-	cd ../amzn2 && \
-	vagrant init && \
 	vagrant plugin install vagrant-vbguest && \
 	vagrant up
