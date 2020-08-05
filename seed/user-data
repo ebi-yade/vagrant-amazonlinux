@@ -1,9 +1,8 @@
 #cloud-config
-# vim:syntax=yaml
 users:
 # A user by the name ec2-user is created in the image by default.
   - default
-  - name: vagrant
+  - name: ec2-user
     groups: wheel
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     plain_text_passwd: vagrant
