@@ -8,3 +8,14 @@ vbox:
 	VBoxManage storageattach "$(VM)" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium seed.iso && \
 	VBoxManage modifyvm "$(VM)" --natpf1 "ssh,tcp,127.0.0.1,2222,,22" --memory 1024 --vram 8 --audio none --usb off && \
 	VBoxManage startvm "$(VM)" --type headless
+cleanup:
+	ssh -p 2222 ec2-user@localhost -i insecure.pem " \
+	sudo rm -rf /var/cache/yum && \
+	sudo dd if=/dev/zero of=/0 bs=4k && \
+	sudo rm -f /0 && \
+	history -c && \
+	sudo shutdown -h now "
+vagrant-register:
+	cd vagrant/package/amznlinux2 && \
+	vagrant package --base "$(VM)" && \
+	vagrant box add --name "amzn2-2.0.20180622.1-x86_64" package.box
