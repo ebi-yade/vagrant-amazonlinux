@@ -2,4 +2,5 @@
 *.vdi
 *.iso
 # Vagrant
+.vagrant
 *.box

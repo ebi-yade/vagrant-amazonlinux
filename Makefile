@@ -19,3 +19,8 @@ vagrant-register:
 	cd vagrant/package && \
 	vagrant package --base "$(VM)" --output amzn2.box && \
 	vagrant box add --name amzn2 amzn2.box
+vagrant-init:
+	cd vagrant/amzn2 && \
+	vagrant init && \
+	vagrant plugin install vagrant-vbguest && \
+	vagrant up
