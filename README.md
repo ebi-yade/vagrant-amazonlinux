@@ -14,7 +14,5 @@ ssh -p 2222 vagrant@localhost -i insecure.pem
 ## Reference
 
 - [I made a beautiful Vagrant box for Amazon Linux 2 LTS (2.0.20180622.1) | Qiita](https://translate.google.co.jp/translate?hl=&sl=ja&tl=en&u=https%3A%2F%2Fqiita.com%2FShibuyaBizman%2Fitems%2Fdb503feb6be555dc32ac)
-
 - [Create a Vagrant Base Box for Amazon Linux 2 | Qiita](https://translate.google.co.jp/translate?hl=&sl=ja&tl=en&u=https%3A%2F%2Fqiita.com%2Faibax%2Fitems%2F7fd9a874cb7e88f95488)
-
 - [Running Amazon Linux 2 as a virtual machine onpremises | AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-2-virtual-machine.html)
