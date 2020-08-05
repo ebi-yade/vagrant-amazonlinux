@@ -16,6 +16,6 @@ cleanup:
 	history -c && \
 	sudo shutdown -h now "
 vagrant-register:
-	cd vagrant/package/amznlinux2 && \
-	vagrant package --base "$(VM)" && \
-	vagrant box add --name "amzn2-2.0.20180622.1-x86_64" package.box
+	cd vagrant/package && \
+	vagrant package --base "$(VM)" --output amzn2.box && \
+	vagrant box add --name amzn2 amzn2.box
