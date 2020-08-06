@@ -17,6 +17,6 @@ cleanup:
 	sudo shutdown -h now "
 vagrant-init:
 	vagrant package --base "$(VM)" --output amzn2.box && \
-	vagrant box add --name amzn2 amzn2.box && \
+	vagrant box add --name amzn2-$(PROJECT_NAME) amzn2.box && \
 	vagrant plugin install vagrant-vbguest && \
 	vagrant up
