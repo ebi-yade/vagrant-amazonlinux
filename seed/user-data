@@ -16,5 +16,5 @@ chpasswd:
   expire: False
 
 runcmd:
-  # cloud-init による起動時の root のパスワードリセット処理を無効化  
+  # Prevent cloud-init from randomizing root password on startup
   - sed -i 's/.*root:RANDOM/#&/g' /etc/cloud/cloud.cfg.d/99_onprem.cfg
