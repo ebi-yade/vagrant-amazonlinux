@@ -10,12 +10,11 @@ vbox:
 	VBoxManage modifyvm "amzn2-$(PROJECT_NAME)" --natpf1 "ssh,tcp,127.0.0.1,2222,,22" --memory 1024 --vram 8 --audio none --usb off && \
 	VBoxManage startvm "amzn2-$(PROJECT_NAME)" --type headless
 cleanup:
-	# when this flow end in failure, please consider # escaping line 18 and 19
+	# when this flow end in failure, please consider # escaping line 18 (dd command)
 	ssh-keygen -R [localhost]:2222 && \
 	chmod 600 insecure.pem && \
 	ssh -p 2222 ec2-user@localhost -i insecure.pem " \
 	sudo rm -rf /var/cache/yum && \
-	sudo dd if=/dev/zero of=/0 bs=4k && \
 	sudo rm -f /0 && \
 	history -c && \
 	sudo shutdown -h now"
